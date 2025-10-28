@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import re
+import subprocess
 from pathlib import Path
 
 # Paths
@@ -32,3 +33,10 @@ except Exception as e:
     print(f"⚠️ Could not delete {script_path.name}: {e}")
 
 print(f"\n✨ Done! Project initialized as '{project_name}'.")
+
+# Enforce pre-commit-install upon setup
+try:
+    subprocess.run(["pre-commit", "install"], check=True)
+    print("✅ pre-commit hooks installed successfully.")
+except (FileNotFoundError, subprocess.CalledProcessError) as e:
+    print(f"⚠️ Could not install pre-commit hooks: {e}")

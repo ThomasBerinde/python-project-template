@@ -45,6 +45,10 @@ coverage.xml
 .pytest_cache/
 cover/
 
+# Poetry
+poetry.lock
+poetry.toml
+
 # Scrapy stuff:
 .scrapy
 
