@@ -7,11 +7,13 @@ A clean and modern Python project template with **Poetry**, **Ruff**, **Mypy**, 
 ## 🚀 Features
 
 - 🧱 Standardized project layout (`src/` + `tests/`)
+- 🔄 Automatic first-run project initialization  
+  (renames `project_name/` → `<your-folder-name>/`, updates `pyproject.toml`, installs the project and pre-commit hooks)
 - 🧹 Auto linting & formatting with [Ruff](https://github.com/astral-sh/ruff)
 - 🔍 Static type checking via [Mypy](https://mypy.readthedocs.io/)
 - 🧪 Testing setup with [Pytest](https://pytest.org/)
 - 🪝 Git hooks via [Pre-commit](https://pre-commit.com/)
-- ⚙️ Fully managed dependencies using [Poetry](https://python-poetry.org/)
+- ⚙️ Dependency management using [Poetry](https://python-poetry.org/)
 
 ---
 
@@ -19,23 +21,35 @@ A clean and modern Python project template with **Poetry**, **Ruff**, **Mypy**, 
 
 ```text
 .
+├── scripts/
+│   ├── init_template.py
+│   ├── setup.ps1
+│   └── setup.sh
 ├── src/
-│ └── project_name/
-│   └── __init__.py
+│   └── project_name/
+│       └── __init__.py
 ├── tests/
-│ └── test_sample.py
+│   └── test_sample.py
 ├── .gitignore
 ├── .pre-commit-config.yaml
 ├── README.md
-├── init_template.py
 └── pyproject.toml
 ```
 
 ## 🧰 Setup Instructions
 
-### 1️⃣ Install Dependencies
+### 1️⃣ Initialize and Install Dependencies
+
+Run the setup script for your platform:
+
+**On Linux/macOS or Windows (Git Bash):**
 
 ```bash
-poetry install --with dev
-python init_template.py
+./scripts/setup.sh
+```
+
+**On Windows (PowerShell):**
+
+```powershell
+./scripts/setup.ps1
 ```
